@@ -1,4 +1,4 @@
-export const Loaded = (state = false, action) => {
+export const isLoaded = (state = false, action) => {
     switch(action.type) {
       case 'IS_LOADING':
         return action.bool;
