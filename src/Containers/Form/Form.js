@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { sendDonations } from '../../actions';
 
-
-class Form extends Component {
+export class Form extends Component {
     constructor() {
       super();
       this.state = {
@@ -14,7 +16,8 @@ class Form extends Component {
        this.setState({ [e.target.name] : e.target.value})
     }
 
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+      e.prevendDefault();
 
     }
     
@@ -39,4 +42,10 @@ class Form extends Component {
     }
 }
 
-export default Form;
+export const mapDispatchToProps = dispatch => (
+    bindActionCreators({
+        sendDonations
+    }, dispatch)
+  );
+
+export default connect(null, mapDispatchToProps)(Form);
