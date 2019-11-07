@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { connect } from 'react-redux';
-import TheAnimal from ''
+import TheAnimal from '../../Component/TheAnimal/TheAnimal';
 
 const Animals = ({rescuedAnimals}) => {
   let animals = rescuedAnimals.map((animal) => {
