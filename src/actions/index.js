@@ -12,3 +12,13 @@ export const sendDonations = (donation) => ({
   type: 'SEND_DONATIONS',
   donation
 });
+
+export const isLoading = (bool) => ({
+    type: 'IS_LOADING',
+    bool
+});
+
+export const hasError = (msg) => ({
+    type: 'HAS_ERROR',
+    msg
+});

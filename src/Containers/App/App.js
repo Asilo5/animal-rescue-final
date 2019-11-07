@@ -3,13 +3,15 @@ import { getAnimals, getDonations } from '../../apiCalls';
 import { listedAnimals, receivedDonations } from '../../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Animals } from '../Animals/Animals';
 
-class App extends Component {
+export class App extends Component {
   async componentDidMount() {
       try {
           const resp = await getAnimals();
+          console.log(resp)
           this.props.listedAnimals(resp);
-          this.appendDonations()
+          this.appendDonations();
       } catch(error) {
           console.log('Error getting animals', error);
       }
@@ -27,7 +29,7 @@ class App extends Component {
   render() {
     return (
         <main>
-        
+          <Animals />
         </main>
     )
   }

@@ -2,13 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import TheAnimal from '../../Component/TheAnimal/TheAnimal';
 
-const Animals = ({rescuedAnimals}) => {
-  let animals = rescuedAnimals.map((animal) => {
-      return <TheAnimal key={animal.id} {...animal}/>
-  })
+export const Animals = ({rescuedAnimals}) => {
+  console.log(rescuedAnimals);
+//   let animals = rescuedAnimals.map((animal) => {
+//       return <TheAnimal key={animal.id} {...animal}/>
+//   })
     return (
       <section>
-        {animals}
+        {/* {animals} */}
       </section>
     )
 }
