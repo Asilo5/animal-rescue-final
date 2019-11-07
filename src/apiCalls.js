@@ -1,7 +1,7 @@
 export const getAnimals = async () => {
     const resp = await fetch('http://localhost:3001/api/v1/rescue-animals');
     const data = await resp.json();
-  
+    console.log(data);
     if(!resp.ok) {
         throw new Error('No animals fetched');
     } else {
@@ -12,7 +12,7 @@ export const getAnimals = async () => {
   export const getDonations = async () => {
       const resp = await fetch('http://localhost:3001/api/v1/donations');
       const data = await resp.json();
-    
+      console.log(data);
       if(!resp.ok) {
           throw new Error('No donations fetched');
       } else {
