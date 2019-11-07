@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import {  } from './orders';
+import { rescuedAnimals } from './listedAnimalsReducer';
+
 
 const rootReducer = combineReducers({
-  
+    rescuedAnimals
 });
 
 export default rootReducer;
