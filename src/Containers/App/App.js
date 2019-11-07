@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 class App extends Component {
   async componentDidMount() {
       try {
-          const resp = await getAnimals;
+          const resp = await getAnimals();
           this.props.listedAnimals(resp);
           this.appendDonations()
       } catch(error) {
@@ -17,7 +17,7 @@ class App extends Component {
   
   appendDonations = async () => {
     try {
-        const resp = await getDonations;
+        const resp = await getDonations();
         this.props.receivedDonations(resp);
     } catch(error) {
         console.log('Error getting donations', error);
@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     return (
         <main>
-
+        
         </main>
     )
   }
