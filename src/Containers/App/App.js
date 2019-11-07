@@ -4,6 +4,7 @@ import { listedAnimals, receivedDonations } from '../../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Animals } from '../Animals/Animals';
+import Form from '../Form/Form';
 
 export class App extends Component {
   async componentDidMount() {
@@ -29,6 +30,7 @@ export class App extends Component {
   render() {
     return (
         <main>
+          <Form />
           <Animals />
         </main>
     )
