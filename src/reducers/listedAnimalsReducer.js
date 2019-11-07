@@ -4,5 +4,5 @@ export const rescuedAnimals = (state = [], action) => {
       return action.animals;
     default:
       return state;
-  }
+  } 
 }
