@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { sendDonations } from '../../actions';
+import { postDonations } from '../../apiCalls';
 
 export class Form extends Component {
     constructor() {
       super();
       this.state = {
+        id: Date.now(),
         name: '',
         donation: 0
       }
@@ -18,7 +20,8 @@ export class Form extends Component {
 
     handleSubmit = (e) => {
       e.prevendDefault();
-
+      postDonations(this.state);
+      this.props.sendDonations(this.state);
     }
     
     render() {
